@@ -20,11 +20,33 @@ nav {
   background-color: var(--light-grey);
   color: var(--darkblue);
   display: flex;
+  height: auto;
+  align-items: center;
   justify-content: space-between;
 }
 
+nav p {
+  padding-left: 1em;
+}
+
 nav a {
-  color: var(--navy);
+  color: var(--darkblue);
+  margin: 0;
+  padding: 1em;
+}
+
+nav a:hover {
+  animation: hover-link 500ms ease-in-out forwards;
+}
+
+@keyframes hover-link{
+  from {
+    color: var(--darkblue);
+    background-color: var(--light-grey);
+  } to {
+    color: var(--navy);
+    background-color: var(--medium-grey);
+  }
 }
 
 /***********************  Footer Section   **************************/
@@ -43,32 +65,51 @@ header {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 header h1 {
-  margin: 0;
-  color: #EEEEEE;
-  animation: show-name 500ms ease-out forwards;
-  font-family: "Caveat", cursive;
-  font-size: 2.5em;
-  background-color: var(--darkblue);
   text-align: center;
+  color: #EEEEEE;
+  overflow: hidden;
+  padding-right: 1.25vw;
+  margin: 10px 0;
+  white-space: nowrap;
+  border-right: 4px solid white;
+  animation: show-letters 2100ms steps(21, end) backwards,
+    show-blinking 420ms 10 forwards;
+  font-family: "Caveat", cursive;
+  font-size: 3em;
+  background-color: var(--darkblue);
 }
 
-@keyframes show-name {
+@keyframes show-letters {
   0% {
-    filter: blur(5px);
+    width: 0;
   }
 
   100% {
-    filter: none;
+    width: 23vw;
+  }
+}
+
+@keyframes show-blinking {
+  0% {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: white;
+  }
+
+  100% {
+    border-color: transparent;
   }
 }
 
 header img {
   border-radius: 50%;
+  border: 3px solid white;
 }
 
 .address {
@@ -98,12 +139,18 @@ hr {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
+  border-bottom: 2px solid var(--medium-grey);
+}
+
+#projects h2 {
+  text-align: center;
 }
 
 section h3 {
   font-family: "Source Serif 4", serif;
   color: #140765;
   text-align: center;
+  font-size: 1em;
 }
 
 section dl {
@@ -112,7 +159,6 @@ section dl {
 }
 
 section ul {
-  margin: 3px;
   list-style-type: square;
 }
 
@@ -140,22 +186,22 @@ section a:hover {
 .three-col {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
-  margin: 10px;
+  gap: 1.5vw;
+  height: auto;
+  margin: 1.5vw;
 }
 
 .card img {
   width: 100%;
   margin: 0;
-  height: 50%;
+  height: auto;
 }
 
 .card {
-  border-width: 0 3px 3px 0;
-  border-color: #9a9cae;
-  box-shadow: #9a9cae30 3px 3px;
+  box-shadow: #0e054c28 5px 5px;
   background-color: var(--light-grey);
   border-radius: 8px;
+  padding-bottom: 20px;
 }
 
 /**************   Responsiveness   *****************/
@@ -170,7 +216,6 @@ section a:hover {
     justify-items: center;
     align-items: center;
     justify-content: space-around;
-    padding-bottom: 20px;
     row-gap: 50px;
   }
 }
@@ -200,29 +245,31 @@ textarea {
   margin-bottom: 15px;
 }
 
-input:focus, textarea:focus {
-    border: 2px solid var(--navy);
-    outline: var(--navy);
+input:focus,
+textarea:focus {
+  border: 2px solid var(--navy);
+  outline: var(--navy);
 }
 
 button {
-    margin-left: 20px;
-    background-color: var(--darkblue);
-    color: var(--light);
-    border: 0px;
-    border-radius: 8px;
-    padding: 5px;
+  margin-left: 20px;
+  background-color: var(--darkblue);
+  color: var(--light);
+  border: 0px;
+  border-radius: 8px;
+  padding: 5px;
 }
 
 button:hover {
-    animation: change-color 250ms ease-in-out forwards;
+  animation: change-color 250ms ease-in-out forwards;
 }
 
 @keyframes change-color {
-    0% {
-        background-color: var(--darkblue);
-    }
-    100% {
-        background-color: var(--navy);
-    }
+  0% {
+    background-color: var(--darkblue);
+  }
+
+  100% {
+    background-color: var(--navy);
+  }
 }
