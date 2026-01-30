@@ -1,0 +1,228 @@
+:root {
+  --light: #EEEEEE;
+  --light-grey: #e6e4e4;
+  --medium-grey: #c0c1d2;
+  --grey: #9a9cae;
+  --navy: #1d2fa4;
+  --darkblue: #0e054c;
+}
+
+body {
+  margin: 0;
+  background-color: var(--light);
+  font-family: "Source Serif 4", serif;
+  box-sizing: border-box;
+}
+
+/****************   Nav Section **********************/
+nav {
+  margin: 0;
+  background-color: var(--light-grey);
+  color: var(--darkblue);
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  color: var(--navy);
+}
+
+/***********************  Footer Section   **************************/
+footer {
+  color: var(--darkblue);
+  padding: 5px 0;
+  border-top: 2px solid var(--grey);
+  display: flex;
+  justify-content: center;
+}
+
+/*********** Splash Page ************************/
+header {
+  background-color: var(--darkblue);
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #EEEEEE;
+  animation: show-name 500ms ease-out forwards;
+  font-family: "Caveat", cursive;
+  font-size: 2.5em;
+  background-color: var(--darkblue);
+  text-align: center;
+}
+
+@keyframes show-name {
+  0% {
+    filter: blur(5px);
+  }
+
+  100% {
+    filter: none;
+  }
+}
+
+header img {
+  border-radius: 50%;
+}
+
+.address {
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+}
+
+.tagline {
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+}
+
+/************* Sections ********************/
+hr {
+  width: 75vw;
+  margin: 2px auto;
+}
+
+#education,
+#honors,
+#skills,
+#leadership {
+  min-width: 500px;
+  width: 50vw;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+section h3 {
+  font-family: "Source Serif 4", serif;
+  color: #140765;
+  text-align: center;
+}
+
+section dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+section ul {
+  margin: 3px;
+  list-style-type: square;
+}
+
+section a {
+  text-decoration: none;
+  color: var(--navy);
+}
+
+section a:hover {
+  animation: show-link 350ms ease-out forwards;
+}
+
+@keyframes show-link {
+  0% {
+    color: var(--light);
+  }
+
+  100% {
+    background-color: var(--navy);
+    color: var(--light);
+  }
+}
+
+/**************   Projects   *****************/
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin: 10px;
+}
+
+.card img {
+  width: 100%;
+  margin: 0;
+  height: 50%;
+}
+
+.card {
+  border-width: 0 3px 3px 0;
+  border-color: #9a9cae;
+  box-shadow: #9a9cae30 3px 3px;
+  background-color: var(--light-grey);
+  border-radius: 8px;
+}
+
+/**************   Responsiveness   *****************/
+@media (max-width: 680px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .three-col {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    row-gap: 50px;
+  }
+}
+
+/**************   Contact Page   *****************/
+.one-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 50vw;
+  max-width: 500px;
+  padding: 10px;
+}
+
+input {
+  background-color: var(--light);
+  border: 1px solid var(--grey);
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  background-color: var(--light);
+  border: 1px solid var(--grey);
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+input:focus, textarea:focus {
+    border: 2px solid var(--navy);
+    outline: var(--navy);
+}
+
+button {
+    margin-left: 20px;
+    background-color: var(--darkblue);
+    color: var(--light);
+    border: 0px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+button:hover {
+    animation: change-color 250ms ease-in-out forwards;
+}
+
+@keyframes change-color {
+    0% {
+        background-color: var(--darkblue);
+    }
+    100% {
+        background-color: var(--navy);
+    }
+}
