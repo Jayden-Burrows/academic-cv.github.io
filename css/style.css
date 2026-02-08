@@ -7,6 +7,10 @@
   --darkblue: #0e054c;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 body {
   margin: 0;
   background-color: var(--light);
@@ -72,13 +76,13 @@ header h1 {
   text-align: center;
   color: #EEEEEE;
   overflow: hidden;
-  padding-right: 1.25vw;
   margin: 10px 0;
   white-space: nowrap;
-  border-right: 4px solid white;
-  animation: show-letters 2100ms steps(21, end) backwards,
-    show-blinking 420ms 10 forwards;
-  font-family: "Caveat", cursive;
+  border-right: 3px solid white;
+  animation: show-letters 2800ms steps(20) forwards,
+    show-blinking 540ms 8 forwards;
+  interpolate-size: allow-keywords;
+  padding-right: 0.125em;
   font-size: 3em;
   background-color: var(--darkblue);
 }
@@ -89,7 +93,7 @@ header h1 {
   }
 
   100% {
-    width: 23vw;
+    width: auto;
   }
 }
 
@@ -110,6 +114,7 @@ header h1 {
 header img {
   border-radius: 50%;
   border: 3px solid white;
+  margin: 5px 0 10px 0;
 }
 
 .address {
@@ -144,6 +149,11 @@ hr {
 
 #projects h2 {
   text-align: center;
+}
+
+nav, header, section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 section h3 {
