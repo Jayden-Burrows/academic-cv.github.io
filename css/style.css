@@ -1,8 +1,8 @@
 :root {
   --light: #EEEEEE;
-  --light-grey: #e6e4e4;
-  --medium-grey: #c0c1d2;
-  --grey: #9a9cae;
+  --light-grey: #e1e0e9;
+  --medium-grey: #b9bac9;
+  --grey: #9597b1;
   --navy: #1d2fa4;
   --darkblue: #0e054c;
 }
@@ -21,7 +21,7 @@ body {
 /****************   Nav Section **********************/
 nav {
   margin: 0;
-  background-color: var(--light-grey);
+  background-color: var(--medium-grey);
   color: var(--darkblue);
   display: flex;
   height: auto;
@@ -172,7 +172,7 @@ hr {
   text-align: center;
 }
 
-nav, header, section {
+nav, header, section, footer {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
@@ -217,22 +217,30 @@ section a:hover {
 .three-col {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5vw;
+  gap: 2vw;
   height: auto;
   margin: 1.5vw;
+}
+
+.card h3 {
+  height: 5vh;
 }
 
 .card img {
   width: 100%;
   margin: 0;
-  height: auto;
+  height: 20vh;
 }
 
 .card {
-  box-shadow: #0e054c28 5px 5px;
+  box-shadow: 0 5px 5px #0e054c5e;
   background-color: var(--light-grey);
   border-radius: 8px;
-  padding-bottom: 20px;
+}
+
+.card ul li {
+  box-sizing: border-box;
+  padding: 0 5px 5px 0;
 }
 
 /**************   Responsiveness   *****************/
@@ -243,23 +251,31 @@ section a:hover {
   }
 
   .three-col {
-    grid-template-columns: 1fr;
+    grid-template-columns: 80vw;
     justify-items: center;
     align-items: center;
     justify-content: space-around;
     row-gap: 50px;
   }
+
+  .three-col .card img {
+    min-height: 300px;
+  }
 }
 
 /**************   Contact Page   *****************/
+
 .one-col {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 0 auto;
+  background-color: var(--light-grey);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  margin: 30px auto;
   width: 50vw;
   max-width: 500px;
-  padding: 10px;
+  height: 35vh;
+  padding: 20px;
 }
 
 input {
@@ -267,6 +283,7 @@ input {
   border: 1px solid var(--grey);
   border-radius: 3px;
   margin-bottom: 10px;
+  height: 25px;
 }
 
 textarea {
